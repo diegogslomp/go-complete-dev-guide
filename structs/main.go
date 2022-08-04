@@ -22,8 +22,9 @@ func main() {
 			zipCode: 94000,
 		},
 	}
-	jimPointer := &jim
-	jimPointer.updateName("Jimmy")
+	// jimPointer := &jim
+	// Go shortcut
+	jim.updateName("Jimmy")
 	jim.print()
 }
 
