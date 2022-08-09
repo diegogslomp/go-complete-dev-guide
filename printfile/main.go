@@ -6,7 +6,7 @@ import (
 	"os"
 )
 
-func printError(message string) {
+func Error(message string) {
 	fmt.Println("Error:", message)
 	os.Exit(1)
 }
@@ -14,15 +14,14 @@ func printError(message string) {
 func main() {
 
 	if len(os.Args) < 2 {
-		printError("Need filename as argument")
+		Error("Need filename as argument")
 	}
 
 	filename := os.Args[1]
 	file, err := os.Open(filename)
 
 	if err != nil {
-		printError("Can not open file")
-		os.Exit(1)
+		Error("Can not open file")
 	}
 
 	io.Copy(os.Stdout, file)
